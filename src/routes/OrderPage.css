@@ -1,0 +1,17 @@
+.header {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: aquamarine;
+}
+
+.my_panel {
+    text-align: center;
+}
+
+.pflex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid blue;
+}

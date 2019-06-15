@@ -1,0 +1,77 @@
+.header {
+    text-align: right;
+    height: 30px;
+    line-height: 30px;
+    background-color: aquamarine;
+}
+
+.header span {
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+.carousel{
+    text-align: center;
+    height: 180px;
+    line-height: 180px;
+    background: #364d79;
+    overflow: hidden;
+}
+  
+h3 {
+    color: #fff;
+}
+
+.lunbo_one {
+    background: url(../images/lb1.jpg) no-repeat center 0;
+    background-size: 100% 100%;
+}
+
+.lunbo_two {
+    background: url(../images/lb2.jpg) no-repeat center 0;
+    background-size: 100% 100%;
+}
+.lunbo_three {
+    background: url(../images/lb3.jpg) no-repeat center 0;
+    background-size: 100% 100%;
+}
+.lunbo_four {
+    background: url(../images/lb4.jpg) no-repeat center 0;
+    background-size: 100% 100%;
+}
+
+.welcome {
+    margin: 5px 0;
+    height: 20px;
+    line-height: 20px;
+}
+
+.btn_div{
+    height: 30px;
+    line-height: 30px;
+}
+
+Button {
+    margin: 5px 0;
+}
+
+.renqi {
+    font-size: 20px;
+    font-family: "华文行楷";
+}
+
+.top {
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+  
+.top img {
+    max-width:100%;
+    height:auto;
+}
+
+.card {
+    width: 100%;
+}
+
