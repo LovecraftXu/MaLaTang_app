@@ -2,12 +2,12 @@
     height: 30px;
     line-height: 30px;
     text-align: center;
-    background-color: aquamarine;
+    background-color: azure;
 }
 
 .photo {
     height: 200px;
-    background-color: aqua;
+    background-color: azure;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,4 +27,14 @@
 .btn {
     width: 80%;
     margin: 5px 10%;
+}
+
+.customer {
+    height: calc(100vh - 48px);
+    overflow: scroll;
+}
+
+.outer {
+    padding: 10px;
+    background: white;
 }

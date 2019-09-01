@@ -8,9 +8,9 @@ export default {
     },
     effects:{
         *getCustomer(action,{ call,put }){
-            console.log("我的id",action.id)
+            // console.log("我的id",action.id)
             let result = yield call(axios.get,"/customer/findById",{ params:{id:action.id} });
-            console.log("我的",result.data)
+            // console.log("我的",result.data)
             yield put ({
                 type:"reloadCustomer",
                 payload:result.data
@@ -27,7 +27,7 @@ export default {
             })
         },
         *saveData(action,{ call,put }){
-            console.log("我的id",action.customer)
+            // console.log("我的id",action.customer)
             yield call(axios.post,"/customer/saveOrUpdate",action.customer);
         },
         

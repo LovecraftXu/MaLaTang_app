@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-06-10 16:46:34
+ * @LastEditTime: 2019-08-29 15:09:48
+ * @LastEditors: Please set LastEditors
+ */
 import axios from 'axios'
 import qs from 'qs'
 import {message} from 'antd'

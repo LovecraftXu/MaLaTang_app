@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-06-12 10:00:25
+ * @LastEditTime: 2019-08-31 14:31:21
+ * @LastEditors: Please set LastEditors
+ */
 import React from 'react';
 import {connect} from 'dva';
 import { Button, Modal, Card } from 'antd';
@@ -35,7 +42,7 @@ class SeatPage extends React.Component {
                     obj:{...obj,orderSeatId:id}
                 });
                 this.reloadSeat();
-                window.location.href = '/#/menu';
+                this.props.history.push({ pathname : '/menu'});   
              },
             onCancel() {
               
@@ -49,7 +56,7 @@ class SeatPage extends React.Component {
         var list = this.props.seat.list;
         var obj = this.props.order.obj;
         return (
-            <div className="seat">
+            <div className={styles.seat}>
                 <div className={styles.header}>
                     选择座位
                 </div>
@@ -60,27 +67,29 @@ class SeatPage extends React.Component {
                 </div>
                 {/* {JSON.stringify(this.props.seat.list)} */}
                 <div className={styles.outer}>
-                    {
-                        list.map((seat)=>{
-                            if(seat.seatType === "空闲"){
-                                return (
-                                <Button shape="circle" onClick={this.toChoose.bind(this,seat.seatId,obj)} key={seat.seatId}>   
-                                    <p>{seat.seatPosition}</p>
-                                    <p>{seat.seatType}</p>
-                                </Button>
-                                )
-                            } else {
-                                return (
-                                <Button shape="circle" type="danger" disabled key={seat.seatId}>
-                                    <p>{seat.seatPosition}</p>
-                                    <p>{seat.seatType}</p>
-                                </Button>
-                                )
-                            }
-                          })
-                    }
+                    <div className={styles.outer}>
+                        {
+                            list.map((seat)=>{
+                                if(seat.seatType === "空闲"){
+                                    return (
+                                    <Button shape="circle" onClick={this.toChoose.bind(this,seat.seatId,obj)} key={seat.seatId}>   
+                                        <p>{seat.seatPosition}</p>
+                                        <p>&nbsp;&nbsp;{seat.seatType}</p>
+                                    </Button>
+                                    )
+                                } else {
+                                    return (
+                                    <Button shape="circle" type="danger" disabled key={seat.seatId}>
+                                        <p>{seat.seatPosition}</p>
+                                        <p>&nbsp;&nbsp;{seat.seatType}</p>
+                                    </Button>
+                                    )
+                                }
+                            })
+                        }
+                    </div>
                 </div>
-                <Footer />
+                <Footer propHistory={this.props.history}/>
             </div>
         )
     }

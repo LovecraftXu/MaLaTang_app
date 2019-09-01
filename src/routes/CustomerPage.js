@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-06-14 15:04:52
+ * @LastEditTime: 2019-09-01 13:48:56
+ * @LastEditors: Please set LastEditors
+ */
 import React from 'react';
 import {connect} from 'dva';
 import { Button, Modal} from 'antd';
@@ -21,7 +28,9 @@ class SeatPage extends React.Component {
     }
 
     outLogin = () => {
-        window.location.href = '/';
+        window.localStorage.removeItem("orderId");
+        // window.location.href = '/';
+        this.props.history.push({ pathname : '/'});
     }
 
     toTransfame(staify){
@@ -82,29 +91,31 @@ class SeatPage extends React.Component {
         let customer = this.props.customer.obj;
         let visible = this.props.customer.visible;
         return (
-            <div className="customer">
+            <div className={styles.customer}>
                 <div className={styles.header}>
                     我的信息
                 </div>
-                <div className={styles.photo}> 
-                    <img  src={customer.photo} alt="图片迷路了" />
+                <div className={styles.outer}>
+                    <div className={styles.photo}> 
+                        <img  src={customer.photo} alt="图片迷路了" />
+                    </div>
+                    <div className={styles.msg}>
+                        <p>我的昵称：{customer.custRealname}</p>
+                        <p>我是：{customer.custType}</p>
+                        <p>我对店家的满意度：{this.toTransfame(customer.custSatisfy)}</p>
+                    </div>
+                    <Modal
+                        title="修改"
+                        visible={visible}
+                        onOk={this.handleOk}
+                        onCancel={this.handleCancel}
+                        >
+                        <CustomerForm initData={customer} ref={this.FormRefs} />
+                    </Modal>
+                    <Button type="primary" block className={styles.btn} onClick={this.toEdit.bind()}>修改信息</Button>
+                    <Button type="danger" block className={styles.btn} onClick={this.outLogin.bind()}>退出登录</Button>
                 </div>
-                <div className={styles.msg}>
-                    <p>我的昵称：{customer.custRealname}</p>
-                    <p>我是：{customer.custType}</p>
-                    <p>我对店家的满意度：{this.toTransfame(customer.custSatisfy)}</p>
-                </div>
-                <Modal
-                    title="修改"
-                    visible={visible}
-                    onOk={this.handleOk}
-                    onCancel={this.handleCancel}
-                    >
-                    <CustomerForm initData={customer} ref={this.FormRefs} />
-                </Modal>
-                <Button type="primary" block className={styles.btn} onClick={this.toEdit.bind()}>修改信息</Button>
-                <Button type="danger" block className={styles.btn} onClick={this.outLogin.bind()}>退出登录</Button>
-               <Footer />
+                <Footer propHistory={this.props.history}/>
             </div>
         )
     }

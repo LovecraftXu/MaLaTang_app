@@ -2,16 +2,26 @@
     height: 30px;
     line-height: 30px;
     text-align: center;
-    background-color: aquamarine;
+    background-color: azure;
 }
 
 .my_panel {
-    text-align: center;
+    text-align: left;
+    background: white;
+    padding: 5px;
+    /* border: 1px solid black; */
+    margin: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 .pflex {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border: 1px solid blue;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.order {
+    background: #ECECEC;
+    height: calc(100vh - 48px);
+    overflow: scroll;
 }

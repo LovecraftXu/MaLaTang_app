@@ -2,7 +2,7 @@
     text-align: right;
     height: 30px;
     line-height: 30px;
-    background-color: aquamarine;
+    background-color: azure;
 }
 
 .header span {
@@ -73,5 +73,17 @@ Button {
 
 .card {
     width: 100%;
+    text-align: center;
+}
+
+.outer {
+    padding: 10px;
+    background: white;
+}
+
+.start {
+    background: #ececec;
+    height: calc(100vh-48px);
+    overflow: scroll;
 }
 

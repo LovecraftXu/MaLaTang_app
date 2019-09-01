@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-06-14 17:05:31
+ * @LastEditTime: 2019-08-28 20:43:08
+ * @LastEditors: Please set LastEditors
+ */
 import React from 'react';
 import { Form, Input, Upload, message, Button, Icon, Select } from 'antd';
 import {connect} from 'dva'
@@ -54,14 +61,14 @@ class CustomerForm extends React.Component {
           })( <Input type="password" placeholder="Password" /> )}
         </Form.Item>
         
-        <Form.Item label="顾客类型">
+        {/* <Form.Item label="顾客类型">
           {getFieldDecorator('custType', {
             rules: [{ required: true, message: 'Please select your custType!' }],
           })( <Select placeholder="Select a option and change input text above" >
                 <Option  value="老顾客">老顾客</Option>             
                 <Option  value="新顾客">新顾客</Option>             
              </Select> )}
-        </Form.Item>
+        </Form.Item> */}
         <Form.Item label="满意度">
           {getFieldDecorator('custSatisfy', {
             rules: [{ required: true, message: 'Please select your Satisfy!' }],
